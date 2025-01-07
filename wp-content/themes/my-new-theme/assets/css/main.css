@@ -1,0 +1,486 @@
+/* CSS Reset dan Variables */
+:root {
+    --bg-primary: #1a1b1f;
+    --bg-secondary: #23252b;
+    --bg-nav: #2a2d35;
+    --text-primary: #e1e1e6;
+    --text-secondary: #a1a1a6;
+    --accent-primary: #7c5ec8;
+    --accent-hover: #9178d8;
+    --border-color: #32343a;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base Styles */
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--accent-primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-hover);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Layout */
+.site {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.site-content {
+    flex: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    width: 100%;
+    background-color: var(--bg-primary);
+}
+
+/* Header & Navigation */
+.site-header {
+    background-color: var(--bg-nav);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-navigation {
+    background-color: var(--bg-nav);
+    padding: 0 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+}
+
+/* Logo/Brand */
+.nav-brand {
+    display: flex;
+    align-items: center;
+}
+
+.nav-search {
+    margin-left: 20px;
+}
+
+.nav-search form {
+    display: flex;
+    align-items: center;
+}
+
+.nav-search input[type="search"] {
+    padding: 5px 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    outline: none;
+}
+
+.nav-search input[type="submit"] {
+    padding: 5px 10px;
+    border: none;
+    background-color: var(--accent-primary);
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.nav-search input[type="submit"]:hover {
+    background-color: var(--accent-hover);
+}
+
+.custom-logo {
+    max-height: 50px;
+    width: auto;
+}
+
+.site-title {
+    margin: 0;
+    font-size: 1.8em;
+    font-weight: 700;
+}
+
+.site-title a {
+    color: var(--text-primary);
+}
+
+.site-description {
+    color: var(--text-secondary);
+    font-size: 0.9em;
+    margin: 5px 0 0;
+}
+
+/* Navigation Menu */
+.nav-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 10px;
+}
+
+.nav-menu li {
+    position: relative;
+}
+
+.nav-menu a {
+    display: block;
+    padding: 15px 20px;
+    color: var(--text-secondary);
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: var(--accent-hover);
+}
+
+/* Dropdown Menu */
+.nav-menu .sub-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--bg-secondary);
+    box-shadow: var(--card-shadow);
+    min-width: 200px;
+    z-index: 999;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+}
+
+.nav-menu li:hover > .sub-menu {
+    display: block;
+}
+
+.nav-menu .sub-menu li {
+    width: 100%;
+}
+
+.nav-menu .sub-menu a {
+    padding: 12px 20px;
+}
+
+/* Content Area */
+.content-wrapper {
+    display: flex;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.content-area {
+    flex: 1;
+    max-width: calc(70% - 20px);
+}
+
+.widget-area {
+    width: 30%;
+    min-width: 300px;
+}
+
+
+/* Posts */
+.post {
+    background-color: var(--bg-secondary);
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--border-color);
+    transition: transform 0.2s ease;
+}
+
+.post:hover {
+    transform: translateY(-2px);
+}
+
+.entry-header {
+    margin-bottom: 20px;
+}
+
+.entry-title {
+    font-size: 2em;
+    margin: 0 0 10px;
+    color: var(--text-primary);
+}
+
+.entry-title a:hover {
+    color: var(--accent-hover);
+}
+
+.entry-meta {
+    color: var(--text-secondary);
+    font-size: 0.9em;
+}
+
+.entry-content {
+    margin-bottom: 20px;
+}
+
+/* Widgets */
+.widget {
+    background-color: var(--bg-secondary);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--border-color);
+}
+
+.widget-title {
+    color: var(--text-primary);
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+/* Footer */
+.site-footer {
+    background-color: var(--bg-secondary);
+    color: var(--text-secondary);
+    padding: 40px 20px;
+    margin-top: auto;
+    border-top: 1px solid var(--border-color);
+}
+
+.site-info {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.site-info p {
+    margin: 10px 0;
+}
+
+.site-footer a {
+    color: var(--text-secondary);
+}
+
+.site-footer a:hover {
+    color: var(--accent-hover);
+}
+
+/* Forms */
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+textarea,
+select {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    border-radius: 6px;
+    padding: 10px 15px;
+    width: 100%;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+}
+
+button,
+.button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    background-color: var(--accent-primary);
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover,
+.button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+    background-color: var(--accent-hover);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent-primary);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-hover);
+}
+
+/* WordPress Core Classes */
+.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.aligncenter {
+    display: block;
+    margin: 5px auto;
+}
+
+.alignright {
+    float: right;
+    margin: 5px 0 20px 20px;
+}
+
+.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    max-width: 96%;
+    padding: 5px;
+    text-align: center;
+    border-radius: 6px;
+}
+
+.wp-caption img {
+    border: 0 none;
+    height: auto;
+    margin: 0;
+    max-width: 98.5%;
+    padding: 0;
+    width: auto;
+}
+
+.wp-caption p.wp-caption-text {
+    font-size: 11px;
+    line-height: 17px;
+    margin: 0;
+    padding: 0 4px 5px;
+    color: var(--text-secondary);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        height: auto;
+        padding: 20px 0;
+    }
+
+    .nav-brand {
+        margin-bottom: 20px;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        background-color: var(--bg-secondary);
+    }
+
+    .nav-menu .sub-menu {
+        position: static;
+        box-shadow: none;
+        border: none;
+        background: transparent;
+        width: 100%;
+    }
+
+    .content-wrapper {
+        flex-direction: column;
+        padding: 20px;
+    }
+    
+    .content-area,
+    .widget-area {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .nav-menu li {
+        width: 100%;
+    }
+
+    .nav-menu a {
+        padding: 12px;
+    }
+
+    .site-content {
+        padding: 20px;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.post, .widget {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Clearfix */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
