@@ -1,0 +1,79 @@
+# Abaikan file sistem operasi
+.DS_Store
+Thumbs.db
+
+# Abaikan file konfigurasi WordPress
+wp-config.php
+wp-config-sample.php
+
+# Abaikan direktori uploads karena biasanya berisi konten user
+wp-content/uploads/
+
+# Abaikan cache dan temporary files
+wp-content/cache/
+wp-content/upgrade/
+wp-content/backup-db/
+wp-content/backups/
+wp-content/blogs.dir/
+wp-content/upgrade/
+wp-content/ai1wm-backups/
+
+# Abaikan file log
+*.log
+error_log
+access_log
+
+# Abaikan file database
+*.sql
+*.sqlite
+
+# Abaikan core WordPress (karena Anda hanya fokus pada tema dan plugin)
+/wp-admin/
+/wp-includes/
+/index.php
+/license.txt
+/readme.html
+/wp-*.php
+/xmlrpc.php
+
+# Abaikan semua tema kecuali yang sedang dikembangkan
+wp-content/themes/*
+!wp-content/themes/my-new-theme/
+
+# Abaikan semua plugin kecuali yang sedang dikembangkan
+wp-content/plugins/*
+!wp-content/plugins/your-plugin-name/
+
+# Abaikan dependensi node jika menggunakan build tools
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Abaikan file environment
+.env
+.env.*
+
+# Abaikan file IDE dan editor
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Abaikan file kompilasi
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Abaikan file kompresi
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
